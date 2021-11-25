@@ -1,5 +1,6 @@
 name: GitHub Actions Demo
 on: 
+  push:
   workflow_dispatch:
   
 jobs:
@@ -17,3 +18,14 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+
+  DeployToDev:
+    runs-on: ubuntu-latest
+    environment: 
+      name: dev
+      url: https://github.com
+    env:
+      sec: ${{ secrets.MYSECRET }}
+    steps:
+     - run: echo $sec
+  
