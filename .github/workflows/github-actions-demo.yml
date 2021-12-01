@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Save secret
         env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: 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
           My_Secret: Rolf
         run: |
           gh repo list
